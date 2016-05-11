@@ -10,6 +10,12 @@ float cloudW;
 float cloudH;
 float cloudVel;
 
+float cloudq;
+float cloudw;
+float cloude;
+float cloudr;
+float cloudspeed;
+
 void setup()
 {
   size(500,500);
@@ -21,28 +27,39 @@ void setup()
   
   cloudX=450;
   cloudY=200;
-  cloudW=90;
-  cloudH=40;
+  cloudW=60;
+  cloudH=60;
+  
+  cloudq=450;
+  cloudw=200;
+  cloude=60;
+  cloudr=60;
   
  
   
 }
 void draw()
 {
- background(0,0,255);
+  background(0,0,255);
+  fill(0,255,0);
+  rect(0,300,500,500);
   fill(#7E7E7E);
  stroke(#7E7E7E);
-  rect(planeX, planeY, planeWidth, planeHeight);
+rect(planeX, planeY, planeWidth, planeHeight);
   triangle(planeX+80,planeY,planeX+80,planeY+30,planeX+120,planeY+30);
   rect(planeX+40,planeY-30,30,100);
   fill(255);
-  ellipse(cloudX,cloudY,cloudW,cloudH);
+  stroke(255);
   
- if (cloudX < -100)
+  ellipse(cloudX,cloudY,cloudW,cloudH);
+  ellipse(cloudX-40,cloudY,cloudW-20,cloudH-20);
+  ellipse(cloudX+40,cloudY,cloudW-20,cloudH-20);
+  
+   if (cloudX < -100)
  {
    cloudX = 590;
  }
-int x = (int) random(2, 2);
+int x = (int) random(1, 5);
   if (x == 0)
   {
    cloudVel = -1;
@@ -52,6 +69,27 @@ int x = (int) random(2, 2);
     cloudVel = 1;
   }
     cloudX -= cloudVel;
+    
+  
+  ellipse(cloudq-100,cloudw-50,cloude,cloudr);
+  ellipse(cloudq-140,cloudw-50,cloude-20,cloudr-20);
+  ellipse(cloudq-60,cloudw-50,cloude-20,cloudr-20);
+  
+   if (cloudq < -100)
+ {
+   cloudq = 590;
+ }
+int t = (int) random(1, 5);
+  if (t == 0)
+  {
+   cloudspeed = -3;
+  }
+  else
+  {
+    cloudspeed = 3;
+  }
+    cloudq -= cloudspeed; 
+
     
  
  if(planeX > 500)
