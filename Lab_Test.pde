@@ -16,6 +16,12 @@ float cloude;
 float cloudr;
 float cloudspeed;
 
+float cloudu;
+float cloudi;
+float cloudo;
+float cloudp;
+float cloudvel;
+
 void setup()
 {
   size(500,500);
@@ -35,7 +41,11 @@ void setup()
   cloude=60;
   cloudr=60;
   
- 
+ cloudu=375;
+  cloudi=250;
+  cloudo=60;
+  cloudp=60;
+  
   
 }
 void draw()
@@ -92,6 +102,28 @@ int t = (int) random(1, 5);
     cloudspeed = 3;
   }
     cloudq -= cloudspeed; 
+    
+    ellipse(cloudu,cloudi,cloudo,cloudp);
+  ellipse(cloudu-40,cloudi,cloudo-20,cloudp-20);
+  ellipse(cloudu+40,cloudi,cloudo-20,cloudp-20);
+    
+     if (cloudu < -100)
+ {
+   cloudu = 590;
+ }
+int p = (int) random(1, 5);
+  if (p == 0)
+  {
+   cloudvel = -2;
+  }
+  else
+  {
+    cloudvel = 2;
+  }
+    cloudu -= cloudvel; 
+    
+    
+    
     
     for(int s = 62; s < 63; s = s+2)
   {
