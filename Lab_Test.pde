@@ -47,6 +47,7 @@ void draw()
  stroke(#7E7E7E);
 rect(planeX, planeY, planeWidth, planeHeight);
   triangle(planeX+80,planeY,planeX+80,planeY+30,planeX+120,planeY+30);
+  triangle(planeX,planeY,planeX- 10,planeY-30,planeX+30,planeY);
   rect(planeX+40,planeY-30,30,100);
   fill(255);
   stroke(255);
@@ -54,6 +55,8 @@ rect(planeX, planeY, planeWidth, planeHeight);
   ellipse(cloudX,cloudY,cloudW,cloudH);
   ellipse(cloudX-40,cloudY,cloudW-20,cloudH-20);
   ellipse(cloudX+40,cloudY,cloudW-20,cloudH-20);
+  
+  
   
    if (cloudX < -100)
  {
@@ -89,6 +92,13 @@ int t = (int) random(1, 5);
     cloudspeed = 3;
   }
     cloudq -= cloudspeed; 
+    
+    for(int s = 62; s < 63; s = s+2)
+  {
+    stroke(0);
+    fill(0);
+    rect(planeX+10, s, s,20);
+  }
 
     
  
@@ -114,6 +124,7 @@ int i = (int) random(2, 2);
       if (key == ' ')
       {
         fill(0);
+        stroke(255);
         rect(planeX+30, planeY + 10, 20,20);
 
   
